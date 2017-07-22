@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Save Card</string>
+
+    <string name="card_number">Enter card number</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="cvv">CVV</string>
+    <string name="save_card">Save this card</string>
+    <string name="label_me">ME</string>
+    <string name="label_peers">Near Device</string>
+    <string name="connect_peer_button">CONNECT</string>
+    <string name="disconnect_peer_button">CANCEL</string>
+    <string name="resend_button">RESEND</string>
+    <string name="wifi_warning">Warning</string>
+    <string name="client_text">NULL</string>
+</resources>

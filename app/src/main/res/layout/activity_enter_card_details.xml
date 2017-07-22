@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:background="@color/colorPrimary"
+        app:layout_collapseMode="parallax"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_card_details_back"
+            android:background="@drawable/ic_arrow_back_white_24px"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DEBIT/CREDIT CARD"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="15dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/card_number"
+                android:textColorHint="@color/white">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/full_page_border"
+                    android:textColorHint="@color/white"
+                    android:id="@+id/et_card_number"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:paddingLeft="8dp"
+                    android:maxLength="16"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_weight="1"
+                android:hint="@string/expiry_date"
+                android:textColorHint="@color/white">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/full_page_border"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:paddingLeft="8dp"
+                android:inputType="date"
+                android:maxLength="5"
+                android:id="@+id/et_expiry_date"
+                />
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="25dp"
+                android:layout_height="match_parent"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="1"
+                android:hint="@string/cvv"
+                android:textColorHint="@color/white"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/full_page_border"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:paddingLeft="8dp"
+                    android:hint="@string/cvv"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:id="@+id/et_cvv"
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:hint="Your name"
+            android:textColorHint="@color/white"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/full_page_border"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:paddingLeft="8dp"
+                android:hint="Card holder name"
+                android:inputType="text"
+                android:id="@+id/et_card_holder_name"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:buttonTint="@color/white"
+                android:text="@string/save_card"
+                android:id="@+id/cb_save_card"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end|center"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/white"
+            android:textSize="18dp"
+            android:layout_marginRight="3dp"
+            android:id="@+id/btn_add_amount"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
