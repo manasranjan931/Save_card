@@ -72,7 +72,7 @@ public class FileTransferService extends IntentService {
             } catch (IOException e) {
 
                 Log.e("bizzmark", e.getMessage());
-                showToast("Error opening client socket. Ask seller to refresh.");
+                showToast("Error opening client socket. Ask to refresh.");
 
             } finally {
 

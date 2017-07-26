@@ -151,7 +151,13 @@ public class DeviceDetailFragment extends Fragment implements ConnectionInfoList
         serviceIntent.putExtra(FileTransferService.EXTRAS_GROUP_OWNER_PORT, 8888);
         getActivity().startService(serviceIntent);
 
-        sendProgress = new ProgressDialog(getActivity());
+        try {
+            Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
+       /* sendProgress = new ProgressDialog(getActivity());
         sendProgress.setMessage("waiting for  response.......");
         sendProgress.setCancelable(false);
         sendProgress.show();
@@ -165,7 +171,7 @@ public class DeviceDetailFragment extends Fragment implements ConnectionInfoList
             }
         };
         Handler pdCanceller = new Handler();
-        pdCanceller.postDelayed(progressRunnable, 30000);
+        pdCanceller.postDelayed(progressRunnable, 30000);*/
     }
 
     @Override
@@ -178,9 +184,7 @@ public class DeviceDetailFragment extends Fragment implements ConnectionInfoList
 
         if(info.groupFormed ){
             sendData();
-
-
-            new FileServerAsyncTask(getActivity()).execute();
+           // new FileServerAsyncTask(getActivity()).execute();
             mContentView.findViewById(R.id.btn_send_data).setVisibility(View.VISIBLE);
             ((TextView) mContentView.findViewById(R.id.status_text)).setText(getResources()
                     .getString(R.string.client_text));

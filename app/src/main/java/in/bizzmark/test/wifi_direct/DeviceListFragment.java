@@ -46,7 +46,7 @@ import static in.bizzmark.test.wifi_direct.DeviceDetailFragment.btnDisconnect;
  * A ListFragment that displays available peers on discovery and requests the
  * parent activity to handle user interaction events
  */
-public class DeviceListFragment extends ListFragment implements PeerListListener {
+public class DeviceListFragment extends ListFragment implements WifiP2pManager.PeerListListener {
 
     private List<WifiP2pDevice> peers = new ArrayList<WifiP2pDevice>();
     ProgressDialog progressDialog = null;
@@ -54,10 +54,6 @@ public class DeviceListFragment extends ListFragment implements PeerListListener
     private WifiP2pDevice device;
 
     private TextView deviceName,deviceStatus;
-
-    private WifiP2pManager manager;
-    private WifiP2pManager.Channel channel;
-    private boolean isWifiP2pEnabled = false;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -166,7 +162,6 @@ public class DeviceListFragment extends ListFragment implements PeerListListener
      */
     public void updateThisDevice(WifiP2pDevice device) {
         this.device = device;
-
         TextView view = (TextView) mContentView.findViewById(R.id.my_name);
         view.setText(device.deviceName);
         view = (TextView) mContentView.findViewById(R.id.my_status);

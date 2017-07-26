@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         cvv = cursor.getString(cursor.getColumnIndex("CVV"));
                         name = cursor.getString(cursor.getColumnIndex("CARD_HOLDER_NAME"));
 
-                        
+
                         cardBO = new CardBO();
                         cardBO.setCardNumber(cardNumber);
                         cardBO.setExpiryDate(expiry);
@@ -154,14 +154,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Create Object To Gson
             Gson gson = new Gson();
-            String jsonEarn = gson.toJson(cardBO1);
+            String json = gson.toJson(cardBO1);
             Intent i = new Intent(this, WiFiDirectActivity.class);
            // i.putExtra("card_details", jsonEarn);
             startActivity(i);
 
             // save json object into sharedPreferences
             SharedPreferences.Editor editor = this.getSharedPreferences("CARD_DETAILS", Context.MODE_PRIVATE).edit();
-            editor.putString("card_details", jsonEarn);
+            editor.putString("card_details", json);
             editor.commit();
 
         }catch (NullPointerException e){

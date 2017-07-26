@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.bizzmark.test">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
 
@@ -30,6 +31,12 @@
         <activity android:name=".AddMoneyActivity"/>
         <activity android:name=".EnterCardDetailsActivity"/>
         <activity android:name=".wifi_direct.WiFiDirectActivity"/>
+
+        <service
+            android:name=".wifi_direct.FileTransferService"
+            android:enabled="true"
+            android:exported="true" />
+
     </application>
 
 </manifest>

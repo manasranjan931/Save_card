@@ -94,7 +94,7 @@ public class WiFiDirectActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        Intent i = getIntent();
+        //Intent i = getIntent();
        // cardDetails = i.getStringExtra("card_details");
 
         // Auto-Refresh p2p
